@@ -1,7 +1,7 @@
 # Usa a imagem do Maven para compilar a aplicacao
 FROM maven:3.8.6-eclipse-temurin-17 AS builder
 WORKDIR /app
-COPY src/main/java/br/com/joaov/gestaocustos .
+COPY . .
 RUN mvn clean package -DskipTests
 
 #Usa uma iamgem do JDK para rodar o .jar gerado
