@@ -1,4 +1,4 @@
-package br.com.joaov.gestaocustos.controller.entity;
+package br.com.joaov.gestaocustos.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,15 +20,14 @@ import java.util.UUID;
 public class Despesa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private UUID id;
-
-    private String nome;
 
     private String descricao;
     private LocalDate data;
     private BigDecimal valor;
+    @Column(length = 100)
     private String categoria;
     private String email;
 
