@@ -1,4 +1,9 @@
 package br.com.joaov.gestaocustos.repository;
 
-public interface DespesaRepository {
+import br.com.joaov.gestaocustos.entity.Despesa;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DespesaRepository extends JpaRepository<Despesa, Long> {
+
+
 }
