@@ -7,8 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CadastroDespesasUseCase {
 
-    @Autowired
-    DespesaRepository despesaRepository;
+
+    private final DespesaRepository despesaRepository;
+
+    public CadastroDespesasUseCase(DespesaRepository despesaRepository) {
+        this.despesaRepository = despesaRepository;
+    }
 
     public Despesa execute(Despesa despesa){
         if(despesa.getCategoria() == null || despesa.getData() == null || despesa.getDescricao() == null||
